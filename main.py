@@ -1,12 +1,9 @@
 import uvicorn
 from fastapi import FastAPI
 
-app = FastAPI()
+from orchestrator.api import create_app
 
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+app: FastAPI = create_app()
 
 
 if __name__ == "__main__":
